@@ -25,9 +25,9 @@ class Keepass2FileBin < Formula
     end
   end
 
+  conflicts_with cask: "keepass-2-file"
+
   def install
     bin.install "keepass-2-file"
   end
-
-  conflicts_with cask: "keepass-2-file"
 end
