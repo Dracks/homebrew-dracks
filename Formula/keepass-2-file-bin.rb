@@ -25,13 +25,6 @@ class Keepass2FileBin < Formula
     end
   end
 
-  on_windows do
-    if Hardware::CPU.intel?
-      url "https://github.com/Dracks/keepass-2-file/releases/download/untagged-d1fae6eb5fbfc63287e9/keepass-2-file-0.6.0-x86_64-pc-windows-msvc.zip"
-      sha256 "8f97c8a1812bcd3d582c4101d6f7354d4c43f5b00076897e83c48307e5119774"
-    end
-  end
-
   conflicts_with cask: "keepass-2-file"
 
   def install
