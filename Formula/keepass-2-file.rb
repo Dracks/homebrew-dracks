@@ -8,6 +8,8 @@ class Keepass2File < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with cask: "keepass-2-file-bin"
+
   def install
     system "cargo", "install", *std_cargo_args
   end

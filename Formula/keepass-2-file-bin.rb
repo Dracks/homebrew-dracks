@@ -4,6 +4,8 @@ class Keepass2FileBin < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/Dracks/keepass-2-file.git", branch: "main"
 
+  conflicts_with cask: "keepass-2-file"
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Dracks/keepass-2-file/releases/download/v0.5.1/keepass-2-file-0.5.1-aarch64-apple-darwin.tar.gz"
