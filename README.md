@@ -20,3 +20,9 @@ brew "<formula>"
 ## Documentation
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+
+## Shell Completion
+
+For more information about shell completion, you can check [Homebrew's documentation](https://docs.brew.sh/Shell-Completion).
+
+To enable shell completion for the formulas in this tap, you need to configure your shell.
