@@ -6,21 +6,21 @@ class Keepass2FileBin < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Dracks/keepass-2-file/releases/download/v0.6.2/keepass-2-file-0.6.2-aarch64-apple-darwin.tar.gz"
-      sha256 "a622e7b031162d577137feddd458b54d999a2419725886a63dd0f2eda6271edf"
+      url "https://github.com/Dracks/keepass-2-file/releases/download/v1.0.0/keepass-2-file-1.0.0-aarch64-apple-darwin.tar.gz"
+      sha256 "9b4f4ef65fc626041ba4039cabf029ded1f87810da92c99871f0d3f2b38fde4b"
 
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Dracks/keepass-2-file/releases/download/v0.6.2/keepass-2-file-0.6.2-x86_64-apple-darwin.tar.gz"
-      sha256 "67d52f0cda8c32c8ca2b6f80a23b091d54a61ca83c1702f0c925821f5668c0e3"
+      url "https://github.com/Dracks/keepass-2-file/releases/download/v1.0.0/keepass-2-file-1.0.0-x86_64-apple-darwin.tar.gz"
+      sha256 "44364367ca6d1429aa51371414b3ec6b7b4781b5dd7778a1f744d27a38020454"
 
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Dracks/keepass-2-file/releases/download/v0.6.2/keepass-2-file-0.6.2-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "6aa3b18f773ca9a83ed5510dd0a04355cedc104f8b3acf9eb4dcc0c0c640d09a"
+      url "https://github.com/Dracks/keepass-2-file/releases/download/v1.0.0/keepass-2-file-1.0.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "4275a0b7de2e31389f24ae11f92638308228e45e2032f88092043a8dd8fc4cdf"
 
     end
   end
