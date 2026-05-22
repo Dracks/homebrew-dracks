@@ -1,0 +1,29 @@
+class {{class_name}} < Formula
+  desc "{{description}}"
+  homepage "{{homepage}}"
+  head "{{head_url}}"
+
+{{#if build_dependencies}}
+{{#each build_dependencies}}
+  depends_on "{{this}}" => :build
+{{/each}}
+{{/if}}
+
+{{#if dependencies}}
+{{#each dependencies}}
+  depends_on "{{this}}"
+{{/each}}
+{{/if}}
+
+  def install
+    # Remove unrecognized options if they cause configure to fail
+    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+    system "./configure", "--disable-silent-rules", *std_configure_args
+    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+  end
+
+  test do
+    # `test do` will create, run in and delete a temporary directory.
+    system "false"
+  end
+end

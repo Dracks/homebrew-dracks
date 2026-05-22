@@ -1,0 +1,43 @@
+class {{class_name}} < Formula
+  desc "{{description}}"
+  homepage "{{homepage}}"
+  url "{{url}}"
+  sha256 "{{sha256}}"
+  license "{{license}}"
+  head "{{head_url}}"{{#if head_branch}}, branch: "{{head_branch}}"{{/if}}
+
+{{#if build_dependencies}}
+{{#each build_dependencies}}
+  depends_on "{{this}}" => :build
+{{/each}}
+{{/if}}
+
+{{#if dependencies}}
+{{#each dependencies}}
+  depends_on "{{this}}"
+{{/each}}
+{{/if}}
+
+{{#if conflicts_with_cask}}
+  conflicts_with cask: "{{conflicts_with_cask}}"
+{{/if}}
+
+  def install
+{{#if install_command}}
+    {{install_command}}
+{{else}}
+    system "cargo", "install", *std_cargo_args
+{{/if}}
+{{#if generate_completions}}
+    generate_completions_from_executable({{completion_binary}}, "{{completion_args}}")
+{{/if}}
+  end
+
+  test do
+{{#if test_command}}
+    {{test_command}}
+{{else}}
+    assert_match version.to_s, shell_output("#{bin}/{{executable_name}} --version")
+{{/if}}
+  end
+end

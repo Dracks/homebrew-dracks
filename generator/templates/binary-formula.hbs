@@ -1,0 +1,67 @@
+class {{class_name}} < Formula
+  desc "{{description}}"
+  homepage "{{homepage}}"
+  license "{{license}}"
+  head "{{head_url}}"{{#if head_branch}}, branch: "{{head_branch}}"{{/if}}
+
+{{#if build_dependencies}}
+{{#each build_dependencies}}
+  depends_on "{{this}}" => :build
+{{/each}}
+{{/if}}
+
+{{#if dependencies}}
+{{#each dependencies}}
+  depends_on "{{this}}"
+{{/each}}
+{{/if}}
+
+{{#if conflicts_with_cask}}
+  conflicts_with cask: "{{conflicts_with_cask}}"
+{{/if}}
+
+  on_macos do
+    if Hardware::CPU.arm?
+{{#each artifacts}}
+{{#if (eq this.target "macos-arm")}}
+      url "{{this.url}}"
+      sha256 "{{this.sha256}}"
+{{/if}}
+{{/each}}
+    end
+    if Hardware::CPU.intel?
+{{#each artifacts}}
+{{#if (eq this.target "macos-intel")}}
+      url "{{this.url}}"
+      sha256 "{{this.sha256}}"
+{{/if}}
+{{/each}}
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+{{#each artifacts}}
+{{#if (eq this.target "linux-intel")}}
+      url "{{this.url}}"
+      sha256 "{{this.sha256}}"
+{{/if}}
+{{/each}}
+    end
+  end
+
+  def install
+    bin.install "{{binary_name}}"
+{{#if generate_completions}}
+    generate_completions_from_executable(bin/"{{binary_name}}", "{{completion_args}}")
+{{/if}}
+  end
+
+  test do
+{{#if test_command}}
+    {{test_command}}
+{{else}}
+    assert_match version.to_s, shell_output("#{bin}/{{binary_name}} --version")
+{{/if}}
+  end
+end
