@@ -1,8 +1,8 @@
 class Keepass2File < Formula
   desc "Tool to generate environment files using secrets from a keepass file"
   homepage "https://github.com/Dracks/keepass-2-file"
-  url "https://github.com/Dracks/keepass-2-file/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "d749d17c062d591d19a345fef1af58a117cc17c747ef361d58daa7d9cf20fe65"
+  url "https://github.com/Dracks/keepass-2-file/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "d32486c619c9b0ce4c5a2c17a740eefabf1c3064e2d39cc5b55b919391aed82d"
   license "GPL-3.0-or-later"
   head "https://github.com/Dracks/keepass-2-file.git", branch: "main"
 
