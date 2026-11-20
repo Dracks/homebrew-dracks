@@ -12,7 +12,7 @@ class Keepass2File < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"keepass-2-file", "completion", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"keepass-2-file", "completion")
   end
 
   test do
