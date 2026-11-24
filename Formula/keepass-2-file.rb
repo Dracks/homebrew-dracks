@@ -1,8 +1,8 @@
 class Keepass2File < Formula
   desc "Tool to generate environment files using secrets from a keepass file"
   homepage "https://github.com/Dracks/keepass-2-file"
-  url "https://github.com/Dracks/keepass-2-file/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "d32486c619c9b0ce4c5a2c17a740eefabf1c3064e2d39cc5b55b919391aed82d"
+  url "https://github.com/Dracks/keepass-2-file/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "600713669a0601c57cfec5976f6e46a5d749ecbf9f4e36ae4a3686f22422d6d9"
   license "GPL-3.0-or-later"
   head "https://github.com/Dracks/keepass-2-file.git", branch: "main"
 
@@ -12,7 +12,7 @@ class Keepass2File < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"keepass-2-file", "completion", shells: [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin/"keepass-2-file", "completion")
   end
 
   test do
