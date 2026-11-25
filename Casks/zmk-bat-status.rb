@@ -1,6 +1,6 @@
 cask "zmk-bat-status" do
   version "0.1.0"
-  sha256 "2ea0163a29bee808be5cfd546e7da9a4c419f48faed3efd2c2420e724d625f1b"
+  sha256 :no_check
 
   url "https://github.com/aucubin/zmk-battery-applet/archive/d8b66ac89cc49ed36f0d87504e93646dd0003fd1.tar.gz"
   name "ZMK Battery"
