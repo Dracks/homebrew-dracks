@@ -13,9 +13,10 @@ tap "dracks/dracks"
 brew "<formula>"
 ```
 
-## Available formulae/Brews
+## Available formulae/Brews & Casks
 * `keepass-2-file`: Download and compile [keepass-2-file](https://github.com/Dracks/keepass-2-file). It's a tool to generate configuration file with secrets extracted from a keepass db file
 * `keepass-2-file-bin`: Download a binary and install it (no deps required) of [keepass-2-file](https://github.com/Dracks/keepass-2-file). See `keepass-2-file` entry for more info
+* `zmk-battery`: Cask (only macos) of [zmk-battery applet](https://github.com/aucubin/zmk-battery-applet). It's an applet for the tray to show the battery of secondary devices in zmk keyboards.
 
 ## Documentation
 
